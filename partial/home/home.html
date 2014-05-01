@@ -1,14 +1,14 @@
 <div class="col-md-12" ng-controller="HomeCtrl">
 
     <h1>Les personnages</h1>
-    <ul>
-        <li ng-repeat='p in persos'>
+    <dl class="dl-horizontal">
+      <dt ng-repeat-start="p in persos">
             <a ui-sref="perso({ id: p.personnageId })">
-            {{p.nomFR}} : {{p.titre}}
+            {{p.nomFR}} 
             </a>
-        </li>
-    </ul>
-
+      </dt>
+      <dd ng-repeat-end>{{p.titre}}</dd>
+    </dl>
 
     <a href="http://www.asterix.com/asterix-de-a-a-z/les-personnages/">asterix.com</a>
 </div>

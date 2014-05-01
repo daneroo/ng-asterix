@@ -1,26 +1,26 @@
 <div class="col-md-12" ng-controller="PersoCtrl">
 
-  <h2>{{perso.nomFR}}</h2>
-  <h3>{{perso.titre}}</h3>
+  <h2>{{perso.nomFR}} <small>{{perso.titre}}</small></h2>
   <p>{{perso.biographie}}</p>
 
-  <p>Compagnons:
-    <span ng-repeat="c in perso.compagnonsAventures">
+  <h5>Compagnons:</h5>
+  <ul class="list-inline">
+    <li ng-repeat="c in perso.compagnonsAventures">
         <a ui-sref="perso({ id: c.compagnonId })">
             {{c.nom}}
         </a>
-    </span>
-  </p>
+    </li>
+  </ul>
 
-  <p>Albums:
-    <span ng-repeat="al in perso.dansQuelAlbum">
-        {{al.titre}}
+  <h5>Albums:</h5>
+  <ul class="list-inline">
+    <li ng-repeat="al in perso.dansQuelAlbum">
+      {{al.titre}}
 <!--
-         <a ui-sref="album({ id: al.numero })">
-            {{al.titre}}
-        </a>
- -->
-     </span>
-  </p>
+       <a ui-sref="album({ id: al.numero })">
+          {{al.titre}}
+      </a>
+-->
+   </li>
 
 </div>
