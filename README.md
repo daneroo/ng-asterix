@@ -29,5 +29,6 @@ Actual generation of code:
     yo cg-angular
 
 The generator asks a few questions, these are the answers I gave:
+
     module name: asterix
     which router: angular-ui
