@@ -1,10 +1,10 @@
 angular.module('asterix').factory('mockdb', function($http) {
   'use strict';
 
-  var perso = [];
+  var persos = [];
   var promise = $http.get('/data/personnages.json')
     .success(function(data, status, headers, config) {
-      perso = data;
+      persos = data;
       // this callback will be called asynchronously
       // when the response is available
     })
@@ -16,8 +16,18 @@ angular.module('asterix').factory('mockdb', function($http) {
 
   var mockdb = {
     promise: promise,
-    getPerso: function() {
-      return perso;
+    getPersos: function() {
+      return persos;
+    },
+    getPerso: function(id) {
+      var found=null;
+      persos.forEach(function(p){
+        // console.log('p',p);
+        if (id===p.personnageId){
+          found=p;
+        }
+      });
+      return found;
     }
   };
 
